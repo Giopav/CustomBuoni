@@ -22,6 +22,7 @@ public class CommandHandler implements CommandExecutor {
             return false;
         }
         player.sendMessage(ChatColor.RED + "Paper detected!");
+        //TODO continue the command with the options
         return true;
     }
 }
