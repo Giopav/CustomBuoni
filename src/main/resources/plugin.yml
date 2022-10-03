@@ -1,0 +1,11 @@
+name: CustomBuoni
+version: '${project.version}'
+main: it.giopav.custombuoni.CustomBuoni
+api-version: 1.19
+authors: [ Giopav ]
+description: Buoni Custom automatizzati.
+commands:
+  buono:
+    description: Your description
+    usage: /<command>
+    permission: custombuoni.command
