@@ -13,15 +13,16 @@ import java.util.Objects;
 public class CommandHandler implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage(ChatColor.RED + "The command can only be executed by a player!");
+            sender.sendMessage(ChatColor.RED + "Il comando può essere eseguito solo dal gioco!");
             return false;
         }
         Player player = (Player) sender;
-        if (Objects.requireNonNull(((Player) sender).getPlayer()).getEquipment().getItemInMainHand().getType() != Material.PAPER) {
-            player.sendMessage(ChatColor.RED + "Your main hand does not have paper equipped!");
+        if (Objects.requireNonNull(((Player) sender).getPlayer()).getEquipment().getItemInMainHand().getType() != Material.PAPER) { //TODO implement a valid check for buoni in the main hand.
+            player.sendMessage(ChatColor.RED + "Non hai un buono in mano.");
             return false;
         }
-        player.sendMessage(ChatColor.RED + "Paper detected!");
+        player.sendMessage(ChatColor.GREEN + "Buono rilevato!");
+
         //TODO continue the command with the options
         return true;
     }

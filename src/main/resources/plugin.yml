@@ -6,6 +6,6 @@ authors: [ Giopav ]
 description: Buoni Custom automatizzati.
 commands:
   buono:
-    description: Your description
-    usage: /<command>
+    description: Main plugin command.
+    usage: §cScrivi "/buono help" per informazioni.
     permission: custombuoni.command
