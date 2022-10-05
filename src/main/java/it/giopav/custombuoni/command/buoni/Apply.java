@@ -23,6 +23,10 @@ public class Apply {
             player.sendMessage(ChatColor.RED + "Per applicare un buono devi avere un item in mano primaria.");
             return false;
         }
+        if (mainHandItem.getItemMeta().getPersistentDataContainer().has(CustomBuoni.getInstance().getKey())) {
+            player.sendMessage(ChatColor.RED + "Non puoi applicare un buono ad un altro buono.");
+            return false;
+        }
         String mainHandContainer = offHandItem.getItemMeta().getPersistentDataContainer().get(CustomBuoni.getInstance().getKey(), PersistentDataType.STRING);
         if (Objects.equals(mainHandContainer, Tipo.NOME.toString())) {
             return Nome.apply(player);
@@ -33,6 +37,7 @@ public class Apply {
         } else if (Objects.equals(mainHandContainer, Tipo.MOBTRAK.toString())) {
             return Mobtrak.apply(player);
         }
-        return true;
+        player.sendMessage(ChatColor.RED + "Questo buono non può essere applicato.");
+        return false;
     }
 }

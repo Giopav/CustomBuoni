@@ -26,6 +26,12 @@ public class Buono {
             return Nome.edit(player);
         } else if (Objects.equals(mainHandContainer, Tipo.DESCRIZIONE.toString())) {
             return Descrizione.edit(player);
+        } else if (Objects.equals(mainHandContainer, Tipo.STATTRAK.toString())) {
+            player.sendMessage(ChatColor.RED + "Il buono stattrak non è modificabile.");
+            return false;
+        } else if (Objects.equals(mainHandContainer, Tipo.MOBTRAK.toString())) {
+            player.sendMessage(ChatColor.RED + "Il buono mobtrak non è modificabile.");
+            return false;
         }
         player.sendMessage(ChatColor.RED + "Non capisco che buono hai in mano.");
         return false;
