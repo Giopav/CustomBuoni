@@ -1,6 +1,7 @@
 package it.giopav.custombuoni.command;
 
-import it.giopav.custombuoni.command.buono.Buono;
+import it.giopav.custombuoni.command.buoni.Apply;
+import it.giopav.custombuoni.command.buoni.Buono;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -17,6 +18,8 @@ public class CommandHandler implements CommandExecutor {
         Player player = (Player) sender;
         if (args.length >= 1) {
             switch (args[0].toLowerCase()) {
+                case "apply":
+                    return Apply.apply(player);
                 case "give":
                     return Give.give(player, args);
                 case "help":

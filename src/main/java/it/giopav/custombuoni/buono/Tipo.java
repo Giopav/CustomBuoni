@@ -17,7 +17,7 @@ public enum Tipo {
     public ItemStack getItemStack() {
         ItemStack itemStack = new ItemStack(Material.PAPER);
         ItemMeta itemMeta = itemStack.getItemMeta();
-        itemMeta.getPersistentDataContainer().set(CustomBuoni.getIstance().getKey(), PersistentDataType.STRING, this.toString());
+        itemMeta.getPersistentDataContainer().set(CustomBuoni.getInstance().getKey(), PersistentDataType.STRING, this.toString());
         List<Component> list = new ArrayList<>();
         itemMeta.displayName(Component.text(this.getName()));
         switch (this) {

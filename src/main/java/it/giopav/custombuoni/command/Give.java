@@ -9,7 +9,7 @@ public class Give {
     public static boolean give(Player player, String[] args) {
         if (args.length != 2) {
             player.sendMessage(ChatColor.RED + "Devi selezionare quale buono vuoi.");
-            return true;
+            return false;
         }
         if (player.getInventory().firstEmpty() == -1) {
             player.sendMessage(ChatColor.RED + "Il tuo inventario è pieno.");
