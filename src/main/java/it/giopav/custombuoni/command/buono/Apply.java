@@ -1,7 +1,7 @@
-package it.giopav.custombuoni.command.buoni;
+package it.giopav.custombuoni.command.buono;
 
+import it.giopav.custombuoni.Buono;
 import it.giopav.custombuoni.CustomBuoni;
-import it.giopav.custombuoni.buono.Tipo;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -28,13 +28,13 @@ public class Apply {
             return false;
         }
         String mainHandContainer = offHandItem.getItemMeta().getPersistentDataContainer().get(CustomBuoni.getInstance().getKey(), PersistentDataType.STRING);
-        if (Objects.equals(mainHandContainer, Tipo.NOME.toString())) {
+        if (Objects.equals(mainHandContainer, Buono.NOME.toString())) {
             return Nome.apply(player);
-        } else if (Objects.equals(mainHandContainer, Tipo.DESCRIZIONE.toString())) {
+        } else if (Objects.equals(mainHandContainer, Buono.DESCRIZIONE.toString())) {
             return Descrizione.apply(player);
-        } else if (Objects.equals(mainHandContainer, Tipo.STATTRAK.toString())) {
+        } else if (Objects.equals(mainHandContainer, Buono.STATTRAK.toString())) {
             return Stattrak.apply(player);
-        } else if (Objects.equals(mainHandContainer, Tipo.MOBTRAK.toString())) {
+        } else if (Objects.equals(mainHandContainer, Buono.MOBTRAK.toString())) {
             return Mobtrak.apply(player);
         }
         player.sendMessage(ChatColor.RED + "Questo buono non può essere applicato.");

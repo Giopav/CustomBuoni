@@ -1,7 +1,7 @@
 package it.giopav.custombuoni.command;
 
-import it.giopav.custombuoni.command.buoni.Apply;
-import it.giopav.custombuoni.command.buoni.Buono;
+import it.giopav.custombuoni.command.buono.Apply;
+import it.giopav.custombuoni.command.buono.Modify;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -20,6 +20,8 @@ public class CommandHandler implements CommandExecutor {
             switch (args[0].toLowerCase()) {
                 case "apply":
                     return Apply.apply(player);
+                case "cancel":
+                    return Cancel.cancel(player);
                 case "give":
                     return Give.give(player, args);
                 case "help":
@@ -27,10 +29,13 @@ public class CommandHandler implements CommandExecutor {
                 case "list":
                     return List.list(player);
                 default:
-                    sender.sendMessage(ChatColor.RED + "Non riconosco l'argomento \"" + args[0] + "\".");
-                    return false;
+                    StringBuilder argCluster = new StringBuilder();
+                    for (int i = 1; i< args.length; i++) {
+                        argCluster.append(args[i]);
+                    }
+                    return Modify.buono(player, argCluster.toString());
             }
         }
-        return Buono.buono(player);
+        return Modify.buono(player, null);
     }
 }

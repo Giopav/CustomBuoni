@@ -1,7 +1,6 @@
 package it.giopav.custombuoni.command;
 
-import it.giopav.custombuoni.buono.Buono;
-import it.giopav.custombuoni.buono.Tipo;
+import it.giopav.custombuoni.Buono;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
@@ -18,23 +17,23 @@ public class Give {
         Buono buono;
         switch(args[1].toLowerCase()) {
             case "nome":
-                buono = new Buono(Tipo.NOME);
+                buono = Buono.NOME;
                 break;
             case "descrizione":
-                buono = new Buono(Tipo.DESCRIZIONE);
+                buono = Buono.DESCRIZIONE;
                 break;
             case "stattrak":
-                buono = new Buono(Tipo.STATTRAK);
+                buono = Buono.STATTRAK;
                 break;
             case "mobtrak":
-                buono = new Buono(Tipo.MOBTRAK);
+                buono = Buono.MOBTRAK;
                 break;
             default:
                 player.sendMessage(ChatColor.RED + "Non riconosco il buono \"" + args[1] + "\".");
                 return false;
         }
         player.getInventory().addItem(buono.getItemStack());
-        player.sendMessage(ChatColor.GREEN + "Ho aggiunto il buono \"" + buono.getTipo().getNormalizedString() + "\" nel tuo inventario!");
+        player.sendMessage(ChatColor.GREEN + "Ho aggiunto il buono \"" + buono.getNormalizedString() + "\" nel tuo inventario!");
         return true;
     }
 }

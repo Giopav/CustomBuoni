@@ -1,6 +1,6 @@
 package it.giopav.custombuoni.command;
 
-import it.giopav.custombuoni.buono.Tipo;
+import it.giopav.custombuoni.Buono;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
@@ -17,14 +17,15 @@ public class TabCompleteHandler implements TabCompleter {
         List<String> completions = new ArrayList<>();
         if (args.length == 1) {
             completions.add("apply");
+            completions.add("cancel");
             completions.add("give");
             completions.add("help");
             completions.add("list");
             return StringUtil.copyPartialMatches(args[0], completions, new ArrayList<>());
         } else if (args.length == 2) {
             if ("give".equals(args[0])) {
-                for (Tipo tipo : Tipo.values()) {
-                    completions.add(tipo.getNormalizedString());
+                for (Buono buono : Buono.values()) {
+                    completions.add(buono.getNormalizedString());
                 }
             }
             return StringUtil.copyPartialMatches(args[1], completions, new ArrayList<>());
