@@ -1,4 +1,4 @@
-package it.giopav.custombuoni.command.buono;
+package it.giopav.custombuoni.command.buonooptions;
 
 import it.giopav.custombuoni.Buono;
 import it.giopav.custombuoni.CustomBuoni;
@@ -29,13 +29,13 @@ public class Apply {
         }
         String mainHandContainer = offHandItem.getItemMeta().getPersistentDataContainer().get(CustomBuoni.getInstance().getKey(), PersistentDataType.STRING);
         if (Objects.equals(mainHandContainer, Buono.NOME.toString())) {
-            return Nome.apply(player);
+            // TODO return ...apply;
         } else if (Objects.equals(mainHandContainer, Buono.DESCRIZIONE.toString())) {
-            return Descrizione.apply(player);
+            // TODO return ...apply;
         } else if (Objects.equals(mainHandContainer, Buono.STATTRAK.toString())) {
-            return Stattrak.apply(player);
+            // TODO return ...apply;
         } else if (Objects.equals(mainHandContainer, Buono.MOBTRAK.toString())) {
-            return Mobtrak.apply(player);
+            // TODO return ...apply;
         }
         player.sendMessage(ChatColor.RED + "Questo buono non può essere applicato.");
         return false;

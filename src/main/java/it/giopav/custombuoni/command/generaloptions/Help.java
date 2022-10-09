@@ -1,4 +1,4 @@
-package it.giopav.custombuoni.command;
+package it.giopav.custombuoni.command.generaloptions;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;

@@ -1,7 +1,7 @@
 package it.giopav.custombuoni.command;
 
-import it.giopav.custombuoni.command.buono.Apply;
-import it.giopav.custombuoni.command.buono.Modify;
+import it.giopav.custombuoni.command.buonooptions.*;
+import it.giopav.custombuoni.command.generaloptions.*;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -30,12 +30,12 @@ public class CommandHandler implements CommandExecutor {
                     return List.list(player);
                 default:
                     StringBuilder argCluster = new StringBuilder();
-                    for (int i = 1; i< args.length; i++) {
-                        argCluster.append(args[i]);
+                    for (String arg : args) {
+                        argCluster.append(arg).append(" ");
                     }
-                    return Modify.buono(player, argCluster.toString());
+                    return Modify.modify(player, argCluster.toString().trim());
             }
         }
-        return Modify.buono(player, null);
+        return Modify.modify(player, null);
     }
 }

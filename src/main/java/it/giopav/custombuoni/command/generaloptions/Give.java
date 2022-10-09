@@ -1,4 +1,4 @@
-package it.giopav.custombuoni.command;
+package it.giopav.custombuoni.command.generaloptions;
 
 import it.giopav.custombuoni.Buono;
 import org.bukkit.ChatColor;
@@ -33,7 +33,7 @@ public class Give {
                 return false;
         }
         player.getInventory().addItem(buono.getItemStack());
-        player.sendMessage(ChatColor.GREEN + "Ho aggiunto il buono \"" + buono.getNormalizedString() + "\" nel tuo inventario!");
+        player.sendMessage(ChatColor.GREEN + "Ho aggiunto il buono \"" + buono.getStringNormalized() + "\" nel tuo inventario!");
         return true;
     }
 }

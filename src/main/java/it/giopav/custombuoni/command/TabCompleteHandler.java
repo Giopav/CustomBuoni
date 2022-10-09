@@ -23,9 +23,9 @@ public class TabCompleteHandler implements TabCompleter {
             completions.add("list");
             return StringUtil.copyPartialMatches(args[0], completions, new ArrayList<>());
         } else if (args.length == 2) {
-            if ("give".equals(args[0])) {
+            if ("give".equalsIgnoreCase(args[0])) {
                 for (Buono buono : Buono.values()) {
-                    completions.add(buono.getNormalizedString());
+                    completions.add(buono.getStringNormalized());
                 }
             }
             return StringUtil.copyPartialMatches(args[1], completions, new ArrayList<>());
