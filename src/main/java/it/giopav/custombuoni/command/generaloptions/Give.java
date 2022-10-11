@@ -17,16 +17,10 @@ public class Give {
         Buono buono;
         switch(args[1].toLowerCase()) {
             case "nome":
-                buono = Buono.NOME;
-                break;
             case "descrizione":
-                buono = Buono.DESCRIZIONE;
-                break;
             case "stattrak":
-                buono = Buono.STATTRAK;
-                break;
             case "mobtrak":
-                buono = Buono.MOBTRAK;
+                buono = Buono.valueOf(args[1].toUpperCase());
                 break;
             default:
                 player.sendMessage(ChatColor.RED + "Non riconosco il buono \"" + args[1] + "\".");
