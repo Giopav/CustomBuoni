@@ -5,8 +5,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-public class Cancel {
-    public static boolean cancel(Player player) {
+public class Reset {
+    public static boolean reset(Player player) {
         ItemStack mainHandItem = player.getEquipment().getItemInMainHand();
         if (!Buono.is(mainHandItem)) {
             player.sendMessage(ChatColor.RED + "Non hai un buono in mano principale.");
