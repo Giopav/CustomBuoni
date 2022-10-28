@@ -25,20 +25,20 @@ public enum Buono {
     private final String name;
     private final String[] lore;
 
-     /**
-      * Constructor builds the enums with name and lore.
-      * @param name will be used as display name to build the ItemStack
-      * @param lore will be used as lore to build the ItemStack
-      */
+    /**
+     * Constructor builds the enums with name and lore.
+     * @param name will be used as display name to build the ItemStack
+     * @param lore will be used as lore to build the ItemStack
+     */
     Buono(String name, String... lore) {
         this.name = name;
         this.lore = lore;
     }
 
-     /**
-      * Checks if the provided {@param itemStack} is a valid Buono via the Persistent Data Container.
-      * @return true if it is, false if it isn't.
-      */
+    /**
+     * Checks if the provided {@param itemStack} is a valid Buono via the Persistent Data Container.
+     * @return true if it is, false if it isn't.
+     */
     public static boolean is(ItemStack itemStack) {
         return itemStack.hasItemMeta() && itemStack.getItemMeta().getPersistentDataContainer().has(CustomBuoni.getInstance().getKey());
     }
@@ -105,9 +105,10 @@ public enum Buono {
         return itemStack;
     }
 
-    // Returns a normalized string of the selected Buono (ex. BUONO -> Buono; STATTRAK -> Stattrak).
+    /**
+     * @return a normalized string of the selected Buono (ex. BUONO = Buono; STATTRAK = Stattrak).
+    */
     public String getStringNormalized() {
         return this.toString().substring(0, 1).toUpperCase() + this.toString().substring(1).toLowerCase();
     }
-
 }
