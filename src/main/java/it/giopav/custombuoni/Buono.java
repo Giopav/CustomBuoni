@@ -29,7 +29,7 @@ public enum Buono {
      * Constructor builds the enums with name and lore.
      * @param name will be used as display name to build the ItemStack
      * @param lore will be used as lore to build the ItemStack
-     */
+     * */
     Buono(String name, String... lore) {
         this.name = name;
         this.lore = lore;
@@ -38,15 +38,15 @@ public enum Buono {
     /**
      * Checks if the provided {@param itemStack} is a valid Buono via the Persistent Data Container.
      * @return true if it is, false if it isn't.
-     */
+     * */
     public static boolean is(ItemStack itemStack) {
         return itemStack.hasItemMeta() && itemStack.getItemMeta().getPersistentDataContainer().has(CustomBuoni.getInstance().getKey());
     }
 
     /**
      * @return the valid Buono from the provided {@param itemStack}, null if there is none.
-     */
-    public static Buono getBuonoFrom(ItemStack itemStack) {
+     * */
+    public static Buono getBuono(ItemStack itemStack) {
         for (Buono buono : Buono.values()) {
             if (buono.toString().equals(itemStack.getItemMeta().getPersistentDataContainer().get(CustomBuoni.getInstance().getKey(), PersistentDataType.STRING))) {
                 return buono;
@@ -56,9 +56,23 @@ public enum Buono {
     }
 
     /**
+     * @return the valid Buono corresponding to the {@param string},
+     * if there isn't one, it just returns null.
+     * */
+    public static Buono getBuono(String string) {
+        Buono buono = null;
+        for (Buono buonoTrue : Buono.values()) {
+            if (buonoTrue.toString().equals(string)) {
+                buono = buonoTrue;
+            }
+        }
+        return buono;
+    }
+
+    /**
      * @return the ItemMeta of the Buono with the string {@param value} at the position 0 in the lore,
      * if the Buono is not NOME or DESCRIZIONE it just returns null (as other Buoni don't have any value).
-     */
+     * */
     public ItemMeta getModifiedItemMeta(String value) {
         if (this != NOME && this != DESCRIZIONE) {
             return null;
@@ -77,7 +91,7 @@ public enum Buono {
     /**
      * @return the value of the {@param itemStack} Buono (taken from the first line of the lore),
      * if the Buono is not NOME or DESCRIZIONE it just returns null (as other Buoni don't have any value).
-     */
+     * */
     public String getValue(ItemStack itemStack) {
         if (this == NOME || this == DESCRIZIONE) {
             return PlainTextComponentSerializer.plainText().serialize(Objects.requireNonNull(itemStack.getItemMeta().lore()).get(0)).replaceFirst(ChatColor.GRAY + "» ", "");
@@ -90,7 +104,7 @@ public enum Buono {
      * PersistentDataHolder with the instance key (CustomBuoni.getInstance().getKey()) and the Buono.toString as value.
      *
      * @return the respective itemStack of the Buono.
-     */
+     * */
     public ItemStack getItemStack() {
         ItemStack itemStack = new ItemStack(Material.PAPER);
         ItemMeta itemMeta = itemStack.getItemMeta();
@@ -107,7 +121,7 @@ public enum Buono {
 
     /**
      * @return a normalized string of the selected Buono (ex. BUONO = Buono; STATTRAK = Stattrak).
-    */
+     * */
     public String getStringNormalized() {
         return this.toString().substring(0, 1).toUpperCase() + this.toString().substring(1).toLowerCase();
     }

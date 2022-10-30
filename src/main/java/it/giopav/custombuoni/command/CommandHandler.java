@@ -21,7 +21,7 @@ public class CommandHandler implements CommandExecutor {
                 case "apply":
                     return Apply.apply(player);
                 case "cancel":
-                    return Reset.reset(player);
+                    return Cancel.cancel(player);
                 case "give":
                     return Give.give(player, args);
                 case "help":

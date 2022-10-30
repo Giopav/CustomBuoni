@@ -12,7 +12,7 @@ public class Help {
         player.sendMessage(ChatColor.GREEN + "[]: Obbligatorio; {}: Opzionale;");
         player.sendMessage(ChatColor.GREEN + "/buono - Modifica il buono della mano principale.");
         player.sendMessage(ChatColor.GREEN + "/buono apply - Applica un buono ad un item.");
-        player.sendMessage(ChatColor.GREEN + "/buono reset - Resetta il buono della mano principale.");
+        player.sendMessage(ChatColor.GREEN + "/buono cancel - Resetta il buono della mano principale.");
         player.sendMessage(ChatColor.GREEN + "/buono give [buono] - Ricevi il buono selezionato.");
         player.sendMessage(ChatColor.GREEN + "/buono help - Mostra questo menù.");
         player.sendMessage(ChatColor.GREEN + "/buono list - Mostra la lista dei buoni.");

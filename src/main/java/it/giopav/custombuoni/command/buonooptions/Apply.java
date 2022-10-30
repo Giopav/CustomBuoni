@@ -26,7 +26,7 @@ public class Apply {
             player.sendMessage(ChatColor.RED + "Non puoi applicare un buono ad un altro buono.");
             return false;
         }
-        Buono buono = Buono.getBuonoFrom(offHandItem);
+        Buono buono = Buono.getBuono(offHandItem);
         switch (Objects.requireNonNull(buono)) {
             case NOME:
                 applyNome(mainHandItem, buono.getValue(offHandItem));

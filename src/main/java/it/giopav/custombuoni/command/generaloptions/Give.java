@@ -14,17 +14,10 @@ public class Give {
             player.sendMessage(ChatColor.RED + "Il tuo inventario è pieno.");
             return false;
         }
-        Buono buono;
-        switch(args[1].toLowerCase()) {
-            case "nome":
-            case "descrizione":
-            case "stattrak":
-            case "mobtrak":
-                buono = Buono.valueOf(args[1].toUpperCase());
-                break;
-            default:
-                player.sendMessage(ChatColor.RED + "Non riconosco il buono \"" + args[1] + "\".");
-                return false;
+        Buono buono = Buono.getBuono(args[1].toUpperCase());
+        if (buono == null) {
+            player.sendMessage(ChatColor.RED + "Non riconosco il buono \"" + args[1] + "\".");
+            return false;
         }
         player.getInventory().addItem(buono.getItemStack());
         player.sendMessage(ChatColor.GREEN + "Ho aggiunto il buono \"" + buono.getStringNormalized() + "\" nel tuo inventario!");

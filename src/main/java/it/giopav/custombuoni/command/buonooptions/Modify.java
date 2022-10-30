@@ -18,7 +18,7 @@ public class Modify {
             return false;
         }
         value = value.replace("&", "§");
-        Buono buono = Buono.getBuonoFrom(mainHandItem);
+        Buono buono = Buono.getBuono(mainHandItem);
         if (buono == Buono.NOME || buono == Buono.DESCRIZIONE) {
             mainHandItem.setItemMeta(buono.getModifiedItemMeta(value));
             player.sendMessage(ChatColor.GREEN + "Il buono " + buono.getStringNormalized() + " è stato modificato in \"" + value + ChatColor.GREEN +"\".");
