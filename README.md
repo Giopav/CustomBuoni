@@ -15,7 +15,7 @@ Currently, there is a limited use for Buoni, let's see them:
 - Mobtrak (Adds a tracker of mob kills onto the item, displayed in the description).
 
 ## Command & subcommands
-> /buono [arg]
+> /buono [subcommand]
 
 The main command is "**/buono**", this is the only command that you will need to call to interact with the plugin and its functions.
 
