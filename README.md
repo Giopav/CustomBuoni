@@ -110,11 +110,12 @@ Some Buoni can be applied (like Nome and Descrizione), let's explore how:
 ## What's all of this about?
 I worked for some years in an Italian Minecraft server called "FearGames", this server was plagued by bad administrative choices, part of these choices wat the intention to keep a lot of features "staff-intensive"[^staffintensive].
 
-A feature of this server was a set of items called "Buoni". From Buoni used to modify the items to Buoni that were used to offer events (so to ask a staffer to organize them), all the way to just asking a member of the staff what was gonna come out in the next update (Buono rivelatore[^rivelatore]).
+A feature of this server was a set of items called "Buoni". From Buoni used to modify the items to Buoni that were used to offer events (so to ask a staffer to organize them), all the way to just asking a member of the staff what was gonna come out in the next update (Buono rivelatore[^Rivelatore]).
 
 For quite some time I tried to push the staff to automate features like the Buoni and others, I never succeeded.
 
 This plugin is to close a chapter of my life, to show that I could (although some doubted me), that I still can, and that I did.
+(This is why all the gameplay messages are in Italian, but everything else is in English).
 
 I hope you liked this quick story!
 
@@ -124,4 +125,4 @@ I hope you liked this quick story!
 [^value]: The value can contain spaces, therefore anything that you write after the "/buono" command will be counted as part of the value.
 [^list]: Every time another Buono is added, it is automatically added to the list subcommand.
 [^staffintensive]: Requires frequent action from the staff.
-[^rivelatore]: "Buono rivelatore" can be kind of translated to "Shower Voucher", by using it you could get a glimpse in the next update of the server, like trying an item not yet out or knowing what will be needed to craft it.
+[^rivelatore]: "Buono Rivelatore" can be kind of translated to "Rivelation Voucher", by using it you could get a glimpse in the next update of the server, like trying an item not yet out or knowing what will be needed to craft it.
