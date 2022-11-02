@@ -21,15 +21,13 @@ public class TabCompleteHandler implements TabCompleter {
             completions.add("give");
             completions.add("help");
             completions.add("list");
-            return StringUtil.copyPartialMatches(args[0], completions, new ArrayList<>());
         } else if (args.length == 2) {
-            if ("give".equalsIgnoreCase(args[0])) {
+            if (args[0].equalsIgnoreCase("give") && sender.hasPermission("custombuoni.command.give")) {
                 for (Buono buono : Buono.values()) {
                     completions.add(buono.getStringNormalized());
                 }
             }
-            return StringUtil.copyPartialMatches(args[1], completions, new ArrayList<>());
         }
-        return null;
+        return StringUtil.copyPartialMatches(args[args.length-1], completions, new ArrayList<>());
     }
 }
