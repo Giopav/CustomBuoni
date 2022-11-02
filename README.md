@@ -34,7 +34,9 @@ The subcommands[^subcommand] are the ones that play the most important role, the
   ![image](https://user-images.githubusercontent.com/43653262/198896035-da17a574-1888-46f8-ba37-1fe338bd0405.png)
 
   The plugin will try to assign as value any[^value] kind of text that you write.
-  
+
+  ------
+
 </details>
 <details>
   <summary>Apply</summary>
