@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TabCompleteHandler implements TabCompleter {
+
     @Override
     public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         List<String> completions = new ArrayList<>();
@@ -30,4 +31,5 @@ public class TabCompleteHandler implements TabCompleter {
         }
         return StringUtil.copyPartialMatches(args[args.length-1], completions, new ArrayList<>());
     }
+
 }
