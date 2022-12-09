@@ -18,6 +18,7 @@ public class Cancel {
             player.sendMessage(ChatColor.GREEN + "Il buono " + buono.getStringNormalized() + " è stato cancellato.");
             return true;
         }
+
         player.sendMessage(ChatColor.RED + "Questo buono non ha niente da cancellare.");
         return false;
     }

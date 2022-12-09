@@ -19,6 +19,7 @@ public class Give {
             player.sendMessage(ChatColor.RED + "Non riconosco il buono \"" + args[1] + "\".");
             return false;
         }
+
         player.getInventory().addItem(buono.getItemStack());
         player.sendMessage(ChatColor.GREEN + "Ho aggiunto il buono \"" + buono.getStringNormalized() + "\" nel tuo inventario!");
         return true;

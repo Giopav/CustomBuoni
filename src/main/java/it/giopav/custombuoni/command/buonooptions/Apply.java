@@ -8,7 +8,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.Collections;
-import java.util.Objects;
 
 public class Apply {
     public static boolean apply(Player player) {
@@ -26,28 +25,31 @@ public class Apply {
             player.sendMessage(ChatColor.RED + "Non puoi applicare un buono ad un altro buono.");
             return false;
         }
+
         Buono buono = Buono.getBuono(offHandItem);
-        switch (Objects.requireNonNull(buono)) {
+        assert buono != null;
+        switch (buono) {
             case NOME:
-                applyNome(mainHandItem, buono.getValue(offHandItem));
                 offHandItem.subtract();
+                applyNome(mainHandItem, buono.getValue(offHandItem));
                 break;
             case DESCRIZIONE:
-                applyDescrizione(mainHandItem, buono.getValue(offHandItem));
                 offHandItem.subtract();
+                applyDescrizione(mainHandItem, buono.getValue(offHandItem));
                 break;
             case STATTRAK:
-                applyStattrak(mainHandItem);
                 offHandItem.subtract();
+                applyStattrak(mainHandItem);
                 break;
             case MOBTRAK:
-                applyMobtrak(mainHandItem);
                 offHandItem.subtract();
+                applyMobtrak(mainHandItem);
                 break;
             default:
                 player.sendMessage(ChatColor.RED + "Questo buono non può essere applicato.");
                 return false;
         }
+
         player.sendMessage(ChatColor.GREEN + "Il buono " + buono.getStringNormalized() + " è stato applicato.");
         return true;
     }

@@ -17,13 +17,15 @@ public class Modify {
             player.sendMessage(ChatColor.RED + "Se vuoi rimuovere il valore scrivi /buono cancel.");
             return false;
         }
-        value = value.replace("&", "§");
+
         Buono buono = Buono.getBuono(mainHandItem);
         if (buono == Buono.NOME || buono == Buono.DESCRIZIONE) {
+            value = value.replace("&", "§");
             mainHandItem.setItemMeta(buono.getModifiedItemMeta(value));
             player.sendMessage(ChatColor.GREEN + "Il buono " + buono.getStringNormalized() + " è stato modificato in \"" + value + ChatColor.GREEN +"\".");
             return true;
         }
+
         player.sendMessage(ChatColor.RED + "Questo buono è applicabile con /buono apply senza essere modificato.");
         return false;
     }
