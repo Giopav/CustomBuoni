@@ -1,7 +1,7 @@
 # CustomBuoni
 This Minecraft plugin introduces Buoni[^buoni], items that can be *used*[^used] only once and that are destroyed afterwards, but let's dive into it.
 
-To understand why I made such a plugin, why there are these types of Buoni, and why is it in italian, jump off to the [**What's all of this about?**](https://github.com/Giopav/CustomBuoni/new/main?readme=1#whats-all-of-this-about) section.
+To understand why I made such a plugin, why there are these types of Buoni, and why is it in italian, jump off to the [**What's all of this about?**](https://github.com/Giopav/CustomBuoni#whats-all-of-this-about) section.
 
 ## What's a Buono?
 A Buono is a voucher that can be used for something.
