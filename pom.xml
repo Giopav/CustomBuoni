@@ -6,7 +6,7 @@
 
     <groupId>it.giopav</groupId>
     <artifactId>custombuoni</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>CustomBuoni</name>

@@ -1,6 +1,8 @@
 package it.giopav.custombuoni.command.generaloptions;
 
-import it.giopav.custombuoni.Buono;
+import it.giopav.custombuoni.CustomBuoni;
+import it.giopav.custombuoni.buoni.Buono;
+import it.giopav.custombuoni.buoni.BuonoType;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
@@ -14,14 +16,16 @@ public class Give {
             player.sendMessage(ChatColor.RED + "Il tuo inventario è pieno.");
             return false;
         }
-        Buono buono = Buono.getBuono(args[1].toUpperCase());
+        args[1] = args[1].toUpperCase();
+        Buono buono = CustomBuoni.getBuoniTypeHashMap().containsKey(args[1]) ?
+                CustomBuoni.getBuoniHashMap().get(BuonoType.valueOf(args[1])) : null;
         if (buono == null) {
             player.sendMessage(ChatColor.RED + "Non riconosco il buono \"" + args[1] + "\".");
             return false;
         }
 
         player.getInventory().addItem(buono.getItemStack());
-        player.sendMessage(ChatColor.GREEN + "Ho aggiunto il buono \"" + buono.getStringNormalized() + "\" nel tuo inventario!");
+        player.sendMessage(ChatColor.GREEN + "Ho aggiunto il buono \"" + buono.getNormalizedString() + "\" nel tuo inventario!");
         return true;
     }
 }

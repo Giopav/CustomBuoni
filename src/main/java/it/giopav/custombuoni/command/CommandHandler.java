@@ -14,7 +14,6 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 public class CommandHandler implements CommandExecutor {
-
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if (!(sender instanceof Player)) {
             sender.sendMessage(ChatColor.RED + "Il comando può essere eseguito solo dal gioco.");
@@ -45,5 +44,4 @@ public class CommandHandler implements CommandExecutor {
 
         return Modify.modify(player, null);
     }
-
 }
